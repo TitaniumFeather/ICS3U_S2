@@ -19,6 +19,10 @@
 # I inputted the number 2 and it outputted 4.0 which matches with my calculator 
 
 #Modify:
-
-
-  
+import math
+print("Area of a Norman Window shape")
+r = int(input("Please enter radius: "))
+area_semi_circle = 0.5*math.pi*r*r
+area_rectangle = 4*r*r
+total_area = area_semi_circle + area_rectangle
+print("Area is: ", total_area)
