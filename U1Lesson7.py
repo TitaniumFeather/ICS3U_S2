@@ -21,15 +21,21 @@
 
 #Modify:
 import math
-x = input("Please input a whole number: ")
-x = int(x)
-y = input("Please input another nonzero whole number")
-y = int(y)
-if y != 0:
-    print("Now deciding if", y, "is a factor of", x, "...")
-    rem = x % y
-    if rem == 0:
-        print("Yes!", y, "is a factor of", x)
+x = int(input("Please input a whole number: "))
+if 1 <= x <= 20:
+    y = int(input("Please input another nonzero whole number"))
+    if 1 <= y <= 20:
+        if y != 0:
+          print("Now deciding if", y, "is a factor of", x, "...")
+          rem = x % y
+          if rem == 0:
+            print("Yes!", y, "is a factor of", x)
+          else:
+            print("No!", y, "is not a factor of", x)
+    else:
+        print("Enter number between 1 and 20")
 else:
-print("Enter a non zero number")
+    print("Enter number between 1 and 20")
+
+
 
