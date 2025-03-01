@@ -1,111 +1,133 @@
-############ PART 1: EVEN OR ODD ################
+############# PART 1: EVEN OR ODD ################
+
+# This line will print a welcome message to the user
 print("Welcome to the even and odd detector!")
+# This will tell the user that this program will determine if the product of two numbers will be even or odd
 print("This program determines if the product of two whole positive numbers will be even or odd!")
 
-number_one = int(input("Please enter your 1st number: "))
-number_two = int(input("Please enter your 2nd number: "))
-product = number_one*number_two
+number_one = int(input("Please enter your 1st number: ")) # creates int varaible "number_one" which is the user's chosen first number.
+number_two = int(input("Please enter your 2nd number: ")) # creates int varaible "number_two" which is the user's chosen second number.
+product = number_one * number_two # multiplies first number by second number and stores in the variable "product".
 
-if (number_one % 2 == 1 and number_two % 2 == 1):
-    print(f"The product of {number_one} x {number_two} (which is {product}) will be odd.")
-elif (number_one % 2 == 0 and number_two % 2 == 0):
-    print(f"The product of {number_one} x {number_two} (which is {product}) will be even.")
-elif (number_one % 2 == 1 and number_two % 2 == 0):
-    print(f"The product {number_one} x {number_two} (which is {product}) will be even.")
-else:
-    print(f"The product {number_one} x {number_two} (which is {product}) will be even.")
+if (number_one % 2 == 1 and number_two % 2 == 1): # This will check if both numbers are odd (if that is true the statement below will run)
+    print("The product of %d x %d (which is %d) will be odd." % (number_one, number_two, product))  # If both numbers are odd, it prints that the product (product value) will be odd
+elif (number_one % 2 == 0 and number_two % 2 == 0): # This will check if both numbers are even (if that is true the statement below will run)
+    print("The product of %d x %d (which is %d) will be even." % (number_one, number_two, product)) # If both numbers are even, it prints that the product will be even to the console
+elif (number_one % 2 == 1 and number_two % 2 == 0): # This will check if "number_one" is odd and "number_two" is even (if that is true the statement below will run)
+    print("The product %d x %d (which is %d) will be even." % (number_one, number_two, product)) # If first is odd and second is even, it prints that the product will be even
+else: # If the first number is even and the second is odd
+    print("The product %d x %d (which is %d) will be even." % (number_one, number_two, product)) # If first is even and second is odd, it prints that the product will be even
+
 
 ############ PART 2: INNER DIAGONAL OF CUBE ################
 
+# Imports the math module to use the math function such as square root which will be used later on in code
 import math
-print("This program will find the cube's inner diagonal from any edge length!")
-
+# Tells user that my program will find the inner diagonal of a cube based of their given side length
+print("I will find the cube's inner diagonal for any edge length!")
+# Asks the user to enter their chosen edge length of the cube and stores it as an integer in "edge_length" variable
 edge_length = int(input("Please enter the edge length of your cube: "))
+# Calculates the diagonal using the formula for the diagonal of a cube which is just edge * sqrt(3)
 diagonal = edge_length * math.sqrt(3)
+# This line rounds the diagonal to 2 decimal places by using "round" method
 diagonal = round(diagonal, 2)
-print(f"The length of the inner diagonal of a cube with side length {edge_length} is: {diagonal}")
+# This prints the diagonal in a sentence format that tells the user the two numbers they multiplied, its product and whether it's even or odd
+print("The length of the inner diagonal of a cube with side length %d is: %.2f" % (edge_length, diagonal))
 
 ############ PART 3: CHANGE IN COINS ################
 
-# Asks user to enter the amount of change in cents and store it as an integer in the "change_original variable".
+# Asks the user to input the amount of change in cents and stores it as an integer in change_original
 change_original = int(input("Please enter the amount of change in cents: "))
-# Creates a copy of change_original variable that can be changed and used in the code while change_original variable doesn't change and an be printed at the end of code for user (eg. number user intially put).
+# Creates a copy of change_original so that the original value can be printed later without modification
 change = change_original
 
-amount_quarters = 0 # amount of quarters that can be made form user change input
-amount_dimes = 0 # amount of dimes that can be made form user change input
-amount_nickels = 0 # amount of nickels that can be made from user change input
-amount_pennies = 0 # amount of pennies that can be made from user change input
-amount_dollars = 0 # amount of dollars that can be made from user change input
+amount_quarters = 0 # amount of quarters
+amount_dimes = 0 # amount of dimes
+amount_nickels = 0 # amount of nickels
+amount_pennies = 0 # amount of pennies
+amount_dollars = 0 # amount of dollars
 
-amount_dollars = int(change / 100)  # This line will calculate number of hundred cents in the change (dollars) 
-change_original = change - (change - (change % 100))  # Updates the "change_original" variable value to be only the change (value below 100 cents) 
-change = change - (change - (change % 100))  # Removes dollar value from change inputted by user
+# Calculates how many whole dollars (100 cents) can be made from the change
+amount_dollars = int(change / 100)
+# Updates change_original to hold only the cents less than 100 (the remainder)
+change_original = change - (change - (change % 100))
+# Removes the dollar value from the change
+change = change - (change - (change % 100))
 
-amount_quarters = int(change / 25)  # This line finds the number of quarters needed by dividing "change" by 25 (25 cents in a quarter) and uses "int" to make sure amount of quarters is an integer.
-change = change % 25  # Updates the remaining change after quarter values taken away from change
+# Finds value of "amount_quarters" (how many quarters) in integer form by dividing change by 25 "cents"
+amount_quarters = int(change / 25)
+# Updates the remaining change after removing the quarters
+change = change % 25
 
-amount_dimes = int(change / 10)  # Calculates number of dimes by dividing change by 10 and removing and decimals by using "int" so "amount_nickels" is a whole number
-change = change % 10  # Updates the remaining change after dime values are remove for "change" variable
+# Finds value of "amount_dimes" (how many dimes) in integer form by dividing change by 10 "cents"
+amount_dimes = int(change / 10)
+# Updates the remaining change after removing the dimes
+change = change % 10
 
-amount_nickels = int(change / 5)  # Calculates number of nickels by dividing change by 5 and removing and decimals by using "int" so "amount_nickels" is a whole number
-change = change % 5  # Updates remaining change 
+# Finds value of "amount_nickels" (how many nickels) in integer form by dividing change by 5 "cents"
+amount_nickels = int(change / 5)
+# This will update "change" to be the remaining change after removing the nickels
+change = change % 5
 
-amount_pennies = change  # Amount of pennies should equal the remaining change as a penny is one cent so no division needed unlike the other coins.
-change = change % 1  # Updates remaining change (should be 0)
+# The remaining change is all in pennies (1 cent each), so amount_pennies equals the remaining change
+amount_pennies = change
+# Updates the remaining change (should now be 0) as one penny is a cent
+change = change % 1
 
-print(change_original, "can be ", end="")
-# This set of if and else statements adjusts the value of "quarter_text" to be plural (quarters) or singular (quarter) based on the amount_quarters used in change.
-if amount_quarters == 1: # if amount of quarters is singular (only one quarter), execute indented code.
-    print("%d quarter", % amount_quarters, end="")
-elif amount_quarters > 1: # if amount of quarters is plural (more than one quarter), execute indented code.
-    print("%d quarters", % amount_quarters, end="")
-else: #this will run if there are zero quarters
-    print("")  # if no quarters, leave empty
+# Creates sentence starter for ouput by telling user the amount of change the user oroginally entered
+print("%d cents can be" % change_original, end="")
 
-# This set of if and else statements adjusts the value of "dime_text" to be plural (dimes) or singular (dime) based on the "amount_dimes" used in change.
-if amount_dimes == 1: # if amount of dimes is singular (only one dime), execute indented code.
-    print("%d dime", % amount_dimes, end="") # this will change dime_text to be the number of dimes followed by the singular reference "dime".
-elif amount_dimes > 1: # if amount of dimes is plural (more than one dime), execute indented code.
-    print("%d dimes", % amount_dimes, end="") # this will change dime_text to be the number of dimes followed by the plural reference "dimes".
-else: #this will run if there are zero dimes
-    print("")  # If no dimes, leave empty
+# If there is exactly 1 quarter, it prints "1 quarter"
+if amount_quarters == 1:
+    print(" %d quarter" % amount_quarters, end="")
+# If there are more than 1 quarter, it prints the number of quarters with the plural form
+elif amount_quarters > 1:
+    print(" %d quarters" % amount_quarters, end="")
 
+# If there is exactly 1 dime, it handles the singular form "dime"
+if amount_dimes == 1:
+    # Checks if there are no other coins as and adds "and" before the word "dime"
+    if amount_nickels == 0 and amount_pennies == 0 and amount_quarters > 0:
+        print(" and %d dime" % amount_dimes, end="")
+    else:
+        print(", %d dime" % amount_dimes, end="")
+# If there is more than 1 dime, it handles the plural form "dimes"
+elif amount_dimes > 1:
+    # Checks if there are no other coins and adds "and" before the word "dimes"
+    if amount_nickels == 0 and amount_pennies == 0 and amount_quarters > 0:
+        print(" and %d dimes" % amount_dimes, end="")
+    else:
+        print(", %d dimes" % amount_dimes, end="")
+
+# If there is exactly 1 nickel, it handles the singular form "nickel"
 if amount_nickels == 1:
-    print("%d nickel", % amount_nickels, end="")
+    # Checks if there are no pennies, and adds "and" before the word "nickel"
+    if amount_pennies == 0 and (amount_quarters > 0 or amount_dimes > 0):
+        print(" and %d nickel" % amount_nickels, end="")
+    else:
+        print(", %d nickel" % amount_nickels, end="")
+# If there are more than 1 nickel, it handles the plural form "nickels"
 elif amount_nickels > 1:
-    print("%d nickels", % amount_nickels, end="")
-else:
-    print("")
+    # Checks if there are no pennies, and adds "and" before the word "nickels"
+    if amount_pennies == 0 and (amount_quarters > 0 or amount_dimes > 0):
+        print(" and %d nickels" % amount_nickels, end="")
+    else:
+        print(", %d nickels" % amount_nickels, end="")
 
+# If there is exactly 1 penny, it handles the singular form "penny"
 if amount_pennies == 1:
-    print("%d penny", % amount_pennies)
+    # Checks if there are other coins and adds "and" before the word "penny"
+    if amount_quarters > 0 and amount_nickels > 0 and amount_dimes > 0:
+        print(" and %d penny" % amount_pennies, end="")
+    else:
+        print(", %d penny" % amount_pennies, end="")
+# If there are more than 1 penny, it handles the plural form "pennies"
 elif amount_pennies > 1:
-    print("%d pennies", % amount_pennies)
-else:
-    penny_text = ""  # If no pennies, leave empty
+    # Checks if there are other coins and adds "and" before the word "pennies"
+    if amount_quarters > 0 or amount_nickels > 0 or amount_dimes > 0:
+        print(" and %d pennies" % amount_pennies, end="")
+    else:
+        print(", %d pennies" % amount_pennies, end="")
 
-# Construct the final result string with proper formatting
-if change_original > 0:
-    result = ""  # Initialize result string
-    if quarter_text != "":  
-        result += quarter_text + ", "  # Add quarters if they exist
-    if dime_text != "":
-        result += dime_text + ", "  # Add dimes to result if they exist (meaning they are not blank quotes "").
-    if nickel_text != "":
-        result += nickel_text + ", "  # Add nickels if they exist
-    if penny_text != "":
-        result += penny_text + ", "  # Add pennies if they exist
-
-# Remove any trailing comma and space
-result = result.strip(", ")
-
-# Find the last comma in the result string
-last_comma = result.rfind(", ")
-
-# If a comma is found, replace the last comma with " and" to make the sentence grammatically correct
-if last_comma != -1:
-    result = result[:last_comma] + " and" + result[last_comma + 1:]
-
-# Print the final result showing the change breakdown
-print(f"{change_original} cents can be {result}.")
+# Adds a final period after the output
+print(".")
