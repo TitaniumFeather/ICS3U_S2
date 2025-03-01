@@ -1,5 +1,15 @@
 ############# PART 1: EVEN OR ODD ################
-
+"""
+   Author : Muhammed Adil
+   Student Number : 753209
+   Revison date : 28 Febuary 2025
+   Program : Even or Odd
+   Description : A program that will determine if the product of 2 numbers will be even or odd
+   VARIABLE DICTIONARY :
+     number_one (int) = The first number the user inputted  
+     number_two (int) = The second number the user inputted
+     product (int) = The product of 1st and 2nd numbers multiplied
+"""
 # This line will print a welcome message to the user
 print("Welcome to the even and odd detector!")
 # This will tell the user that this program will determine if the product of two numbers will be even or odd
@@ -20,7 +30,17 @@ else: # If the first number is even and the second is odd
 
 
 ############ PART 2: INNER DIAGONAL OF CUBE ################
-
+"""
+   Author : Muhammed Adil
+   Student Number : 753209
+   Revison date : 28 Febuary 2025
+   Program : Length of a Diagonal in a Cube
+   Description : A calculator that will determine inner diagonal of cube using given side length
+   VARIABLE DICTIONARY :
+     edge_length (int) = The edge length of he cube inputted by user
+     diagonal (int) = The inner diagonal of the cube
+     product (int) = The product of 1st and 2nd numbers multiplied
+"""
 # Imports the math module to use the math function such as square root which will be used later on in code
 import math
 # Tells user that my program will find the inner diagonal of a cube based of their given side length
@@ -35,7 +55,21 @@ diagonal = round(diagonal, 2)
 print("The length of the inner diagonal of a cube with side length %d is: %.2f" % (edge_length, diagonal))
 
 ############ PART 3: CHANGE IN COINS ################
-
+"""
+   Author : Muhammed Adil
+   Student Number : 753209
+   Revison date : 28 Febuary 2025
+   Program : Making Change in Coins
+   Description : A Program that makes change for amounts less than $1.00 using fewest coins
+   VARIABLE DICTIONARY :
+     change_original (int) = The unmodified orignal amount of change user entered
+     change (int) = The change that gets modified to find amount of coins
+     amount_quarters (int) = Amount of quarters used to create change
+     amount_dimes (int) = Amount of dimes used to create change
+     amount_nickels (int) = Amount of nickels used to create change
+     amount_pennies (int) = Amount of pennies used to create change
+     amount_dollars (int) = Amount of dollars used to create change
+"""
 # Asks the user to input the amount of change in cents and stores it as an integer in change_original
 change_original = int(input("Please enter the amount of change in cents: "))
 # Creates a copy of change_original so that the original value can be printed later without modification
@@ -50,9 +84,9 @@ amount_dollars = 0 # amount of dollars
 # Calculates how many whole dollars (100 cents) can be made from the change
 amount_dollars = int(change / 100)
 # Updates change_original to hold only the cents less than 100 (the remainder)
-change_original = change - (change - (change % 100))
+change_original = change % 100
 # Removes the dollar value from the change
-change = change - (change - (change % 100))
+change = change % 100
 
 # Finds value of "amount_quarters" (how many quarters) in integer form by dividing change by 25 "cents"
 amount_quarters = int(change / 25)
@@ -84,50 +118,50 @@ if amount_quarters == 1:
 elif amount_quarters > 1:
     print(" %d quarters" % amount_quarters, end="")
 
-# If there is exactly 1 dime, it handles the singular form "dime"
+# If there is only one dime, the code will use the singular form "dime"
 if amount_dimes == 1:
-    # Checks if there are no other coins as and adds "and" before the word "dime"
+    # Checks if there are no other coins/amount of quarters is more than zero, and if true, then adds "and" before the word "dime"
     if amount_nickels == 0 and amount_pennies == 0 and amount_quarters > 0:
         print(" and %d dime" % amount_dimes, end="")
-    else:
+    else: #If exception above is not met, the code doesn't add "and"
         print(", %d dime" % amount_dimes, end="")
-# If there is more than 1 dime, it handles the plural form "dimes"
+# If there is more than one dime the code will use the plural form "dimes"
 elif amount_dimes > 1:
-    # Checks if there are no other coins and adds "and" before the word "dimes"
+    # Checks if there are no other coins/amount of quarters is more than zero, and if true, then adds "and" before the word "dimes"
     if amount_nickels == 0 and amount_pennies == 0 and amount_quarters > 0:
         print(" and %d dimes" % amount_dimes, end="")
-    else:
+    else: #If exception above is not met, the code doesn't add "and" before "dimes"
         print(", %d dimes" % amount_dimes, end="")
 
-# If there is exactly 1 nickel, it handles the singular form "nickel"
+# If there is only one nickel, the code will use the singular form "nickel"
 if amount_nickels == 1:
-    # Checks if there are no pennies, and adds "and" before the word "nickel"
+    # Checks if there are no pennies, and either there are more than zero quarters or more than zero dimes
     if amount_pennies == 0 and (amount_quarters > 0 or amount_dimes > 0):
-        print(" and %d nickel" % amount_nickels, end="")
-    else:
+        print(" and %d nickel" % amount_nickels, end="") # if true, adds "and" before singular nickel
+    else: #if not true, the code will not add "and" as this means that nickels were not the last coin
         print(", %d nickel" % amount_nickels, end="")
-# If there are more than 1 nickel, it handles the plural form "nickels"
+# If there is more than one nickel, the code will use the plural form "nickels"
 elif amount_nickels > 1:
-    # Checks if there are no pennies, and adds "and" before the word "nickels"
+    # Checks if there are no pennies, and either there are more than zero quarters or more than zero dimes
     if amount_pennies == 0 and (amount_quarters > 0 or amount_dimes > 0):
-        print(" and %d nickels" % amount_nickels, end="")
-    else:
+        print(" and %d nickels" % amount_nickels, end="") # if true, adds "and" before plural nickels
+    else: #if not true, the code will not add "and" as this means that nickels were not the last coin
         print(", %d nickels" % amount_nickels, end="")
 
-# If there is exactly 1 penny, it handles the singular form "penny"
+# If there is exactly 1 penny, code uses the singular form "penny"
 if amount_pennies == 1:
-    # Checks if there are other coins and adds "and" before the word "penny"
-    if amount_quarters > 0 and amount_nickels > 0 and amount_dimes > 0:
+    # Checks if at least one of the other coins are there and adds "and" before the word "penny"
+    if amount_quarters > 0 or amount_nickels > 0 or amount_dimes > 0:
         print(" and %d penny" % amount_pennies, end="")
-    else:
-        print(", %d penny" % amount_pennies, end="")
-# If there are more than 1 penny, it handles the plural form "pennies"
+    else: # If this is not true the code doesn't add "and" before penny
+        print("%d penny" % amount_pennies, end="")
+# If there are more than 1 penny, it uses the plural form "pennies"
 elif amount_pennies > 1:
-    # Checks if there are other coins and adds "and" before the word "pennies"
+    # Checks if at least one of the other coins are there and adds "and" before the word "pennies"
     if amount_quarters > 0 or amount_nickels > 0 or amount_dimes > 0:
         print(" and %d pennies" % amount_pennies, end="")
-    else:
+    else: # If this is not true the code doesn't add "and" before pennies
         print(", %d pennies" % amount_pennies, end="")
 
-# Adds a final period after the output
+# Lastly adds a period to finish the sentence
 print(".")
