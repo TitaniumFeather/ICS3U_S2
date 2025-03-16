@@ -1,5 +1,7 @@
 """
    Author : Muhammed Adil
+   Student number: 753209
+   Course code: ICS3U
    Revison date : March 15, 2025
    Program : A number guessing game
    Description : a prgoram that will guess anumber between 1 & 100,
