@@ -20,4 +20,17 @@ else:
     print("Please enter either A, B or C")
 
 #Mdoify 2:
-if (x >= 80) and (x <= 100)
+x = int(input("Enter number between 1-100"))
+
+if (x >= 80) and (x <= 100):
+    print("A")
+elif (x >= 70) and (x <= 79):
+    print("B")
+elif (x >= 60) and (x <= 69):
+    print("C")
+elif (x >= 50) and (x <= 59):
+    print("D")
+elif (x < 50):
+    print("F")
+else:
+    print("Not a valid number")
