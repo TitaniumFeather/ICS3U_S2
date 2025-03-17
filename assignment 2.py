@@ -18,7 +18,7 @@ import random
 # Prints a welcome message to the user.
 print("Hello! Welcome to the number guessing game!")
 # Tells the the user about the game and how it functions.
-print("I am thinking of a number between 1 and 100. It is your turn to guess what it is. You have a maximum of six (6) tries.")
+print("I am thinking of a number between 1 and 100. It is your turn to guess what it is.You have a maximum of six (6) tries.")
 
 # Generates a random number between 1 and 100 (inclusive of 1, exclusive of 100).
 num = random.randrange(1, 100, 1) 
@@ -36,7 +36,7 @@ while guess < 6:
     # Tells the user they guessed correctly.
     print("You guessed right!")  
     # Exits the loop since the correct number was guessed.
-    break  
+    guess = 7  
   # If the guess is incorrect and there are remaining attempts:
   elif guess < 6:  
     # If the guess is too high:
