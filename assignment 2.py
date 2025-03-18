@@ -5,7 +5,7 @@
    Revison date : March 15, 2025
    Program : A number guessing game
    Description : a prgoram that will guess anumber between 1 & 100,
-     and the user has to gues that number in the given 6 attempts.
+      and the user has to gues that number in the given 6 attempts.
    VARIABLE DICTIONARY :
      num (int) = randomly generated number between 1 and 100  
      guess (int) = counter to track the number of guesses made by the user  
@@ -29,27 +29,25 @@ guess = 0
 
 # Loops until the user has guessed 6 times.
 while guess < 6:  
-  # Increments the guess counter by one, each guess.
+   # Increments the guess counter by one, each guess.
   guess += 1  
-  # Asks the user for input, converts it to an integer, and stores it in guess_num (represents the number user guessed).
+   # Asks the user for input, converts it to an integer, and stores it in guess_num (represents the number user guessed).
   guess_num = int(input("Guess #%d: " % guess))  
-  # If the guessed number is equal to the randomly generated number, code below will run.
-   
+
+  # If the guessed number is equal to the randomly generated number, code below will run. 
   if guess_num == num:
     # Tells the user they guessed correctly.
     print("You guessed right!")  
     # Exits the loop since the correct number was guessed.
-    guess = 7  
-  # If the guess is incorrect and there are remaining attempts, code below will run.
-  elif guess < 6:  
+    guess = 7   
     # If the guess is too high:
-    if guess_num > num:  
+  elif guess_num > num:  
       # Tells the user to guess a lower number.
       print("Lower!")  
     # If the guess is too low:
-    else: 
+  else: 
       # Tells the user to guess a higher number.
-      print("Higher!")  
+      print("Higher!")
 
 # If the loop was over and the user didn't correctly the code below will run.
 if guess_num != num:
