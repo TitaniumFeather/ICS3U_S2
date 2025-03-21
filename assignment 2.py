@@ -22,7 +22,7 @@ print("I am thinking of a number between 1 and 100. It is your turn to guess wha
 # Tells user how many tries they have to guess.
 print("You have a maximum of six (6) tries.")
 
-# Generates a random number between 1 and 100.
+# Generates a random integer between 1 and 100 and assigns it to "num".
 num = random.randint(1, 100) 
 # Creates the variable "guess" (representing number of guesses) and assigns it to zero.
 guess = 0
