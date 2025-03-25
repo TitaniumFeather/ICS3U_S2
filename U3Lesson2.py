@@ -1,3 +1,12 @@
+# Predict A:
+# Yes. It prints ["Apples", "Bananas", "Cherries", "Dosa"]
+
+# Predict B:
+# Prints "Number of items" followed by length fo the array.
+
+# Predict C:
+# Apple, Banada, Cherry, Dosa
+
 lengthList = int(input("How many items are you entering? "))
 fruits = []
 inputs = 0
