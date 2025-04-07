@@ -1,15 +1,18 @@
-word = input("Enter a word: ")
+print("Palindrom program!")
+palindromeArray = ["civic", "basketball", "radar", "level", "kayak", "soccer", "racecar", "madam", "refer", "lool"]
 
-arr = list(word)
 counter = 0
 
-for i in range(len(arr)):
-  if arr[i] == arr[-1 - i]:
-   counter +=1
-  else:
-    print(word, "is not a palindrome!")
-    break
-  if counter == len(arr):
-    print(word, "is a palindrome!")
+for word in palindromeArray:
+  maxNum = len(word)//2
+  for j in range(maxNum):
+    if word[j] == word[len(word)-1-j]:
+      counter +=1
+    else:
+      print(word, "is not a palindrome!" )
+      break
+    if counter == maxNum:
+      print(word, "is a palindrome!" )
      
   
+
