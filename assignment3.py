@@ -5,7 +5,7 @@ palindromeArray = ["civic", "basketball", "radar", "goal", "kayak", "soccer", "r
 
 # Creates for loop that cycles through each word in the palindromeArray
 for word in palindromeArray:
-  # Sets 
+  # C
   letterMatches = 0
   letterPosition = 0
   halfway = len(word) // 2
@@ -18,7 +18,8 @@ for word in palindromeArray:
     if letterMatches == halfway:
       print(word, "is a palindrome")
     letterPosition += 1
-    
+
+# 
 print("Goodbye!")
      
   
