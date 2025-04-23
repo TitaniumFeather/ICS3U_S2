@@ -1,3 +1,18 @@
+"""
+   Author : Muhammed Adil
+   Student number: 753209
+   Course code: ICS3U
+   Revison date : April 25, 2025
+   Program : Palindrome checker
+   Description : A porgram that identifies whther the words in a given list are 
+       palindromes or not.
+   VARIABLE DICTIONARY :
+     palindromeArray (list) = array of words with palindromes and non-palindromes 
+     letterMatches (int) = amount of matches in the word between a letter and a letter
+       from the mirroring side.
+     letterPosition (int) = index indicating the letter in a word
+     halfway (int) = half the length of a word
+"""
 # Informs user about the program details
 print("Palindrome program!")
 # Creates an array with words either palindrome 
