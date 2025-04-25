@@ -20,7 +20,7 @@ palindromeArray = ["civic", "basketball", "radar", "goal", "kayak", "soccer", "r
 
 # Creates for loop that cycles through each word in the palindromeArray
 for word in palindromeArray:
-  # C
+  # Creates variable which tracks the amount of matches between letters
   letterMatches = 0
   letterPosition = 0
   halfway = len(word) // 2
