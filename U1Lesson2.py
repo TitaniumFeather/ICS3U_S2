@@ -5,7 +5,7 @@ print(24)
 # I predict that the number 24 will be printed to the console.
 
 # Run:
-# My prediction was correct! The output was indeed the number 24.
+# My prediction was correct! The output was indeed the number 24..
 
 # Modify:
 amount = 24
