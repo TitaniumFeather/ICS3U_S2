@@ -5,7 +5,7 @@
    Revison date : March 15, 2025
    Program : A number guessing game
    Description : a prgoram that will guess anumber between 1 & 100,
-      and the user has to gues that number in the given 6 attempts.
+      and the user has to gues that number in the given 6 attempts. 
    VARIABLE DICTIONARY :
      num (int) = randomly generated number between 1 and 100  
      guess (int) = counter to track the number of guesses made by the user  
