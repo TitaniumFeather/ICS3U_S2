@@ -3,7 +3,7 @@
    Student number: 753209
    Course code: ICS3U
    Revison date : April 25, 2025
-   Program : Palindrome checker
+   Program : Palindrome checker 
    Description : A porgram that identifies whther the words in a given list are 
        palindromes or not.
    VARIABLE DICTIONARY :
