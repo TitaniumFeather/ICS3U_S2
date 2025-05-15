@@ -15,8 +15,8 @@ try:
   fh = open("wordle.dat", "r")
   eof = False
   while not eof:
-            line = fh.readline().strip()
-  eof = (line == "")
+    line = fh.readline().strip()
+    eof = (line == "")
   if not eof:
       arr.append(line.split(" "))
 fh.close()
