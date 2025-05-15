@@ -1,14 +1,21 @@
-fh = open("wordle.dat", "r")
+# Open file and assigns it to "fh"
 
+
+# Creates an array that stores each line as a value
 arr = []
+# Creates array for all dates in number format
 date_arr = []
+# Creates array with all words in "wordle.dat"
 word_arr = []
+# Array with mopnths
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-eof = False
-while not eof:
-  line = fh.readline().strip()
+try:
+  fh = open("wordle.dat", "r")
+  eof = False
+  while not eof:
+            line = fh.readline().strip()
   eof = (line == "")
   if not eof:
       arr.append(line.split(" "))
@@ -55,7 +62,7 @@ if choice == "w":
 
 elif choice == "d":
   user_year = input("Enter the year: ")
-  user_month = input("Enter the month (3-letter abbreviation, as in 'Jan' for 'January'): ")
+  user_month = input("Enter the month (3-letter abbreviation, as in 'Jan' for 'January'): ").capitalize()
   user_day = input("Enter the day: ")
   if 20210619 <= merge(user_month, user_day, user_year) <= 20240421:
     print("The word entered on", merge(user_month, user_day, user_year), "was", isDateMatch(user_month, user_day, user_year))
