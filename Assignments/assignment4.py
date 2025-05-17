@@ -128,8 +128,3 @@ elif choice == "d":
   else:
     # Prints given date is too recent
     print(merge(user_month, user_day, user_year), "is too recent. Our records only go as late as 20240421. Please enter an earlier date.")
-
-# If user enters something other than 'w' or 'd'
-else:
-  # Error message
-  print("Unrecognized option. Enter either 'w' or 'd'.")  
