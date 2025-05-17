@@ -1,3 +1,33 @@
+"""
+Author : Muhammed Adil
+Student number: 753209
+Course code: ICS3U
+Revision date : May 17, 2025
+Program : Wordle Database Search
+Description : A program that reads from a Wordle solution file and allows the user to 
+    search for a Wordle solution by date or find the date on which a specific word appeared.
+
+VARIABLE DICTIONARY :
+  arr (list) = stores each line of the file as a list: [Month, Day, Year, Word]
+  date_arr (list) = stores all dates in integer YYYYMMDD format
+  word_arr (list) = stores all the words from the file
+  months (list) = contains month abbreviations used to convert month names to numbers
+  fh (file object) = used to open and read the wordle.dat file
+  line (str) = temporarily stores a line read from the file before processing
+  month (str) = stores the 3-letter abbreviation of the month
+  day (str) = stores the day portion of a date
+  year (str) = stores the year portion of a date
+  date (int) = temporary variable wehn looping through date_arr
+  input_date (int) = result of merging user-entered month, day, and year
+  word (str) = temporary variable used when looping through word_arr
+  user_word (str) = stores the word input by the user when searching for a date
+  choice (str) = stores user input for selecting either word or date search
+  w (str) = stores the word input by the user if searching by word
+  user_year (str) = stores the year input by the user when searching by date
+  user_month (str) = stores the month input by the user when searching by date
+  user_day (str) = stores the day input by the user when searching by date
+"""
+
 # Creates an array that stores each line as a value
 arr = []
 # Creates array for all dates in number format
