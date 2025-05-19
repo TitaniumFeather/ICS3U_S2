@@ -89,7 +89,9 @@ def isWordMatch(user_word):
 
 # Defines function to search for a date and return the corresponding word
 def isDateMatch(month, day, year):
-  input_date = merge(month, day, year)  # Converts input date to integer
+  # Creates input_date, which is the parameters of the function, but merged to
+  # numerical date format.
+  input_date = merge(month, day, year)  
   # Cycles through every date in date_arr
   for date in date_arr:
     # if date is equal to input_date:
