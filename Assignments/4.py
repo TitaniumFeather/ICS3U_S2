@@ -1,3 +1,40 @@
+"""
+Author : Muhammed Hashim
+Student number: 752451
+Course code: ICS3U
+Revision date : May 19, 2025
+Program : Wordle Search
+Description : searches inside wordle file to get word or date ouput
+
+VARIABLE DICTIONARY :
+data_rows (list) = stores each line of the file as a list: [Month, Day, Year, Word]
+all_dates (list) = stores all dates in integer YYYYMMDD format
+all_words (list) = stores all the words from the file
+month_array (list) = contains month abbreviations used to convert month names to numbers
+fh (file object) = used to open and read the wordle.dat file
+line (str) = temporarily stores a line read from the file before processing
+eof (bool) = flag used to detect the end of the file while reading lines
+temp_month (str) = 3-letter abbreviation of the month passed into combine_date_parts()
+temp_day (str) = day portion passed into combine_date_parts()
+temp_year (str) = year portion passed into combine_date_parts()
+numerical_date (int) = result of combining month, day, and year into YYYYMMDD format
+i (int) = loop counter used for iterating through data_rows and all_words
+m (int) = loop counter used for iterating through data_rows for extracting words
+search_word (str) = word input by the user when searching for a date
+counter (int) = flag used to indicate if the word was found in find_word_date()
+month (str) = parameter passed to get_word_by_date() representing the month
+day (str) = parameter passed to get_word_by_date() representing the day
+year (str) = parameter passed to get_word_by_date() representing the year
+input_date (int) = result of merging parameters in get_word_by_date() to numerical form
+date (int) = current date being checked inside the for-loop of get_word_by_date()
+choice (str) = user input for selecting either word or date search ("w" or "d")
+w (str) = stores the word input by the user if searching by word
+user_year (str) = stores the year input by the user when searching by date
+user_month (str) = stores the month input by the user when searching by date
+user_day (str) = stores the day input by the user when searching by date
+formatted_date (int) = result of combining user_month, user_day, and user_year
+"""
+
 # Initialize a list to hold all lines of data read from the file
 data_rows = []
 # List to store all dates converted to numerical form
