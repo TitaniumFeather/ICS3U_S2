@@ -26,6 +26,7 @@ VARIABLE DICTIONARY :
   user_year (str) = stores the year input by the user when searching by date
   user_month (str) = stores the month input by the user when searching by date
   user_day (str) = stores the day input by the user when searching by date
+  x (int) = temporary variable to cycle through while loop
 """
 
 # Creates an array that stores each line as a value
@@ -66,12 +67,14 @@ def merge(month, day, year):
   # Combines all into one integer an returns
   return year + month + day  
 
+x = 0
 # Loops through each row in arr to fill date_arr and word_arr
-for x in range(len(arr)):
+while x < len(arr):
   # Converts the date to int and appends to date_arr
   date_arr.append(merge(arr[x][0], arr[x][1], arr[x][2]))
   # Appends the word (third item in the row)
-  word_arr.append(arr[x][3])  
+  word_arr.append(arr[x][3])
+  x += 1
 
 # Creates function to search for a word and returns the date if found
 def isWordMatch(user_word):
