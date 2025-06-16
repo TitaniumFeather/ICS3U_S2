@@ -85,7 +85,7 @@ def merge(arr, arr2, arr3, arr4, l, m, r):
 arr = []
 
 try:
-    f = open("data (1).dat", "r")
+    f = open("data.dat", "r")
     EndOfFile = False  
     while not EndOfFile:
         line = f.readline().strip()  
@@ -125,16 +125,17 @@ mergeSort(Expiry_Dates, FullName, CCNumbers, CCTypes, 0, len(Expiry_Dates) - 1)
 # ANSI color codes 
 RED = "\033[91m"      # Red text for expired cards
 YELLOW = "\033[93m"   # Yellow text for soon-to-expire cards
+GREEN = "\u001b[32m"  # Green for valid cards
 RESET = "\033[0m"     # Reset text color to default
 
 for i in range(len(Expiry_Dates)):
   if luhnCheck(CCNumbers[i]):
-    validity = "VALID"
+    validity = "VALID (LUHN CHECK VERIFIED)"
   else: 
     validity = "INVALID"
-  if Expiry_Dates[i] < 202506:
-    print((YELLOW + "%-37s %-15s %-20s %-10s %-25s" + RESET) % (FullName[i] + ':', "\U0001F4B3" + " " + CCTypes[i], '#' + CCNumbers[i], Expiry_Dates[i], "RENEW IMMEDIATELY" + " | " + validity))
-  elif Expiry_Dates[i] == 202506:
-      print((RED + "%-37s %-15s %-20s %-10s %-25s" + RESET) % (FullName[i] + ':', "\U0001F4B3" + " " + CCTypes[i], '#' + CCNumbers[i], Expiry_Dates[i], "EXPIRED" + " | " + validity))
+  if Expiry_Dates[i] < 202505:
+    print(("%-37s %-15s %-20s %-10s %-25s %-5s") % (FullName[i] + ':', "\U0001F4B3" + " " + CCTypes[i], '#' + CCNumbers[i], Expiry_Dates[i], RED + "EXPIRED" + RESET, " | " + GREEN + validity + RESET))
+  elif Expiry_Dates[i] == 202506 or Expiry_Dates[i] == 202505:
+      print(("%-37s %-15s %-20s %-10s %-25s") % (FullName[i] + ':', "\U0001F4B3" + " " + CCTypes[i], '#' + CCNumbers[i], Expiry_Dates[i], YELLOW + "RENEW IMMEDIATELY" + RESET + " | " + GREEN + validity + RESET))
   else:
     continue
